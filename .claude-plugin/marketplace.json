@@ -1,0 +1,32 @@
+{
+  "name": "orange-hill-marketplace",
+  "owner": {
+    "name": "Orange Hill",
+    "url": "https://github.com/orange-hill"
+  },
+  "metadata": {
+    "description": "Claude Code plugin marketplace by Orange Hill",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "orange-hill-engineering",
+      "description": "AI-powered development tools for Orange Hill projects. Includes 23 specialized agents, 18 commands, and 11 skills for Laravel, Next.js, and Chrome extensions.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Orange Hill",
+        "url": "https://github.com/orange-hill"
+      },
+      "homepage": "https://github.com/orange-hill/orange-hill-marketplace",
+      "tags": [
+        "compound-engineering",
+        "laravel",
+        "nextjs",
+        "typescript",
+        "chrome-extension",
+        "workflow-automation"
+      ],
+      "source": "./plugins/orange-hill-engineering"
+    }
+  ]
+}
