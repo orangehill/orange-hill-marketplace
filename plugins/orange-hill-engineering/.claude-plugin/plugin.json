@@ -6,10 +6,6 @@
     "name": "Orange Hill",
     "url": "https://github.com/orange-hill"
   },
-  "credits": {
-    "original": "Compound Engineering Plugin by Kieran Klaassen",
-    "repository": "https://github.com/kieranklaassen/compound-engineering"
-  },
   "keywords": [
     "compound-engineering",
     "laravel",
