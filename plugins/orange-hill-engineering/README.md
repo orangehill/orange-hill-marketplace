@@ -167,6 +167,10 @@ claude /plugin install orange-hill-engineering
 
 The `/workflows:compound` command captures solved problems in `docs/solutions/` with searchable frontmatter. This ensures your team's knowledge compounds over time.
 
+## Security
+
+The plugin includes a pre-tool-use hook that blocks dangerous `rm` commands (like `rm -rf /`, `rm -rf ~`, etc.) while allowing all other operations.
+
 ## License
 
 See LICENSE file.

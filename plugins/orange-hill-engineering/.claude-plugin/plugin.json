@@ -25,5 +25,18 @@
       "command": "npx",
       "args": ["chrome-devtools-mcp@latest"]
     }
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -c \"import json,sys,re;d=json.loads(sys.stdin.read());cmd=d.get('tool_input',{}).get('command','');patterns=[r'rm\\s+-rf\\s+/',r'rm\\s+-rf\\s+~',r'rm\\s+-rf\\s+\\$HOME',r'rm\\s+-rf\\s+\\.\\.',r'rm\\s+-rf\\s+\\*',r'rm\\s+-rf\\s+\\.',r'rm\\s+-r\\s+-f\\s+/',r'rm\\s+--recursive.*/'];blocked=any(re.search(p,cmd,re.I)for p in patterns);print(json.dumps({'decision':'block','reason':'Dangerous rm command blocked'}if blocked else{'decision':'approve'}))\""
+          }
+        ]
+      }
+    ]
   }
 }
