@@ -1,7 +1,7 @@
 {
   "name": "orange-hill-engineering",
   "version": "1.0.0",
-  "description": "AI-powered development tools for Laravel, Next.js, and Chrome extensions. Includes 23 specialized agents, 18 commands, and 11 skills. Derived from Compound Engineering by Kieran Klaassen.",
+  "description": "AI-powered development tools for Laravel, Next.js, and Chrome extensions. Includes 23 specialized agents, 19 commands, and 11 skills. Derived from Compound Engineering by Kieran Klaassen.",
   "author": {
     "name": "Orange Hill",
     "url": "https://github.com/orange-hill"

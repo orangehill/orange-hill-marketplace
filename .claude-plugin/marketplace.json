@@ -11,7 +11,7 @@
   "plugins": [
     {
       "name": "orange-hill-engineering",
-      "description": "AI-powered development tools for Orange Hill projects. Includes 23 specialized agents, 18 commands, and 11 skills for Laravel, Next.js, and Chrome extensions.",
+      "description": "AI-powered development tools for Orange Hill projects. Includes 23 specialized agents, 19 commands, and 11 skills for Laravel, Next.js, and Chrome extensions.",
       "version": "1.0.0",
       "author": {
         "name": "Orange Hill",

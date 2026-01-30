@@ -17,9 +17,9 @@ Initial release of the Orange Hill Engineering plugin, derived from [Compound En
 - **Research (3)**: best-practices-researcher, framework-docs-researcher, git-history-analyzer
 - **Workflow (2)**: pr-comment-resolver, orange-hill-style-editor
 
-#### Commands (18)
+#### Commands (19)
 - **Workflows (6)**: plan, review, work, compound, brainstorm, deepen-plan
-- **Utilities (12)**: plan_review, triage, changelog, resolve_pr_parallel, resolve_todo_parallel, test-browser, test-laravel, migrate-check, queue-status, test-nextjs, api-health, extension-build
+- **Utilities (13)**: plan_review, triage, changelog, resolve_pr_parallel, resolve_todo_parallel, test-browser, test-laravel, migrate-check, queue-status, test-nextjs, api-health, extension-build, generate_command
 
 #### Skills (11)
 - **Ported (7)**: compound-docs, file-todos, git-worktree, rclone, frontend-design, agent-browser, brainstorming

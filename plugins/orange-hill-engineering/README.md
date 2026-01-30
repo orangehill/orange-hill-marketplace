@@ -1,6 +1,6 @@
 # Orange Hill Engineering Plugin
 
-AI-powered development tools for Orange Hill projects. Includes 23 specialized agents, 18 commands, and 11 skills for Laravel, Next.js, and Chrome extensions.
+AI-powered development tools for Orange Hill projects. Includes 23 specialized agents, 19 commands, and 11 skills for Laravel, Next.js, and Chrome extensions.
 
 ## Credits
 
@@ -61,7 +61,7 @@ claude /plugin install orange-hill-engineering
 | `pr-comment-resolver` | PR feedback resolution |
 | `orange-hill-style-editor` | Style guide compliance |
 
-### Commands (18)
+### Commands (19)
 
 #### Workflow Commands (6)
 | Command | Purpose |
@@ -73,7 +73,7 @@ claude /plugin install orange-hill-engineering
 | `/workflows:brainstorm` | Explore requirements |
 | `/deepen-plan` | Parallel research enrichment |
 
-#### Utility Commands (12)
+#### Utility Commands (13)
 | Command | Purpose |
 |---------|---------|
 | `/plan_review` | Multi-agent plan review |
@@ -88,6 +88,7 @@ claude /plugin install orange-hill-engineering
 | `/test-nextjs` | Run Next.js tests (Jest/Vitest/Playwright) |
 | `/api-health` | Check external API health |
 | `/extension-build` | Build/package Chrome extensions |
+| `/generate_command` | Create custom slash commands |
 
 ### Skills (11)
 
@@ -165,10 +166,6 @@ claude /plugin install orange-hill-engineering
 ### Knowledge Compounding
 
 The `/workflows:compound` command captures solved problems in `docs/solutions/` with searchable frontmatter. This ensures your team's knowledge compounds over time.
-
-## Security
-
-The plugin includes a pre-tool-use hook that blocks dangerous `rm` commands while allowing all other operations.
 
 ## License
 

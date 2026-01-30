@@ -261,7 +261,7 @@ Skills are automatically loaded when relevant. Key skills:
 | `/brainstorm` | Explore requirements |
 | `/deepen-plan` | Parallel research enrichment |
 
-### Utility Commands (12)
+### Utility Commands (13)
 | Command | Purpose |
 |---------|---------|
 | `/plan_review` | Multi-agent plan review |
@@ -276,6 +276,7 @@ Skills are automatically loaded when relevant. Key skills:
 | `/test-nextjs` | Run Next.js tests (Jest/Vitest/Playwright) |
 | `/api-health` | Check external API health |
 | `/extension-build` | Build/package Chrome extensions |
+| `/generate_command` | Create custom slash commands |
 
 ---
 
