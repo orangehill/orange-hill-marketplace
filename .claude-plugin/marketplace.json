@@ -45,6 +45,24 @@
         "macos"
       ],
       "source": "./plugins/mcp-things3"
+    },
+    {
+      "name": "mcp-weather",
+      "description": "Weather forecasts and geocoding via Open-Meteo API (free, no API key required)",
+      "version": "1.0.0",
+      "author": {
+        "name": "Orange Hill",
+        "url": "https://github.com/orange-hill"
+      },
+      "homepage": "https://github.com/orange-hill/orange-hill-marketplace",
+      "tags": [
+        "mcp",
+        "weather",
+        "forecast",
+        "open-meteo",
+        "geocoding"
+      ],
+      "source": "./plugins/mcp-weather"
     }
   ]
 }

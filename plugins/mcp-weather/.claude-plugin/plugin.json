@@ -1,0 +1,10 @@
+{
+  "name": "mcp-weather",
+  "description": "Weather forecasts and geocoding via Open-Meteo API (free, no API key required)",
+  "version": "1.0.0",
+  "author": {
+    "name": "Personal Assistant"
+  },
+  "keywords": ["mcp", "weather", "forecast", "open-meteo", "geocoding"],
+  "license": "MIT"
+}
