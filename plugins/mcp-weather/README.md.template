@@ -1,0 +1,53 @@
+# mcp-SERVICE_NAME
+
+SERVICE_DESCRIPTION
+
+## Setup
+
+### Prerequisites
+- Node.js 18+
+
+### Environment Variables
+
+| Variable | Required | Description |
+|----------|----------|-------------|
+| `SERVICE_API_KEY` | Yes | Your API key from SERVICE_PROVIDER |
+
+### Installation
+
+**As a Claude Code plugin:**
+```bash
+claude --plugin-dir /path/to/mcp-SERVICE_NAME
+```
+
+**Or add to a marketplace and install:**
+```bash
+/plugin install mcp-SERVICE_NAME@marketplace-name
+```
+
+### Manual setup
+```bash
+cd mcp-SERVICE_NAME
+npm install
+```
+
+## Available Tools
+
+| Tool | Description |
+|------|-------------|
+| `example_tool` | Description of the tool |
+
+## Usage Examples
+
+After installing the plugin, you can ask Claude:
+- "Example query that uses the tool"
+
+## Testing
+
+```bash
+npm test
+```
+
+## License
+
+MIT
