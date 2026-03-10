@@ -389,6 +389,658 @@ server.registerTool(
   }
 );
 
+// --- Status change tools (AppleScript, no auth needed) ---
+
+server.registerTool(
+  "complete_todo",
+  {
+    description: "Mark a todo as completed in Things 3 by its ID.",
+    inputSchema: {
+      id: z.string().describe("The ID of the todo to complete"),
+    },
+  },
+  async ({ id }) => {
+    try {
+      const script = `
+tell application "Things3"
+  set t to to do id "${id.replace(/"/g, '\\"')}"
+  set status of t to completed
+  return name of t
+end tell`;
+      const name = await runAppleScript(script);
+      return {
+        content: [{ type: "text", text: `Todo "${name}" marked as completed.` }],
+      };
+    } catch (error) {
+      return {
+        content: [{ type: "text", text: `Error: ${error.message}` }],
+        isError: true,
+      };
+    }
+  }
+);
+
+server.registerTool(
+  "cancel_todo",
+  {
+    description: "Cancel a todo in Things 3 by its ID.",
+    inputSchema: {
+      id: z.string().describe("The ID of the todo to cancel"),
+    },
+  },
+  async ({ id }) => {
+    try {
+      const script = `
+tell application "Things3"
+  set t to to do id "${id.replace(/"/g, '\\"')}"
+  set status of t to canceled
+  return name of t
+end tell`;
+      const name = await runAppleScript(script);
+      return {
+        content: [{ type: "text", text: `Todo "${name}" has been canceled.` }],
+      };
+    } catch (error) {
+      return {
+        content: [{ type: "text", text: `Error: ${error.message}` }],
+        isError: true,
+      };
+    }
+  }
+);
+
+server.registerTool(
+  "delete_todo",
+  {
+    description: "Move a todo to the Trash in Things 3 by its ID.",
+    inputSchema: {
+      id: z.string().describe("The ID of the todo to move to Trash"),
+    },
+  },
+  async ({ id }) => {
+    try {
+      const script = `
+tell application "Things3"
+  set t to to do id "${id.replace(/"/g, '\\"')}"
+  set todoName to name of t
+  move t to list "Trash"
+  return todoName
+end tell`;
+      const name = await runAppleScript(script);
+      return {
+        content: [{ type: "text", text: `Todo "${name}" moved to Trash.` }],
+      };
+    } catch (error) {
+      return {
+        content: [{ type: "text", text: `Error: ${error.message}` }],
+        isError: true,
+      };
+    }
+  }
+);
+
+server.registerTool(
+  "complete_project",
+  {
+    description: "Mark a project as completed in Things 3 by its ID.",
+    inputSchema: {
+      id: z.string().describe("The ID of the project to complete"),
+    },
+  },
+  async ({ id }) => {
+    try {
+      const script = `
+tell application "Things3"
+  set p to project id "${id.replace(/"/g, '\\"')}"
+  set status of p to completed
+  return name of p
+end tell`;
+      const name = await runAppleScript(script);
+      return {
+        content: [{ type: "text", text: `Project "${name}" marked as completed.` }],
+      };
+    } catch (error) {
+      return {
+        content: [{ type: "text", text: `Error: ${error.message}` }],
+        isError: true,
+      };
+    }
+  }
+);
+
+// --- Reading tools (AppleScript, no auth needed) ---
+
+server.registerTool(
+  "get_areas",
+  {
+    description: "List all areas in Things 3 with their projects.",
+    inputSchema: {},
+  },
+  async () => {
+    try {
+      const script = `
+tell application "Things3"
+  set output to ""
+  set allAreas to areas
+  repeat with a in allAreas
+    set areaId to id of a
+    set areaName to name of a
+    set projNames to ""
+    set areaProjects to projects of a
+    repeat with p in areaProjects
+      if projNames is not "" then set projNames to projNames & ", "
+      set projNames to projNames & name of p
+    end repeat
+    set output to output & areaId & "|||" & areaName & "|||" & projNames & "
+"
+  end repeat
+  return output
+end tell`;
+      const raw = await runAppleScript(script);
+      if (!raw) {
+        return { content: [{ type: "text", text: "No areas found." }] };
+      }
+      const areas = raw
+        .split("\n")
+        .filter((line) => line.includes("|||"))
+        .map((line) => {
+          const [id, name, projects] = line.split("|||");
+          return {
+            id: id || "",
+            name: name || "",
+            projects: projects ? projects.split(", ").filter(Boolean) : [],
+          };
+        });
+      return {
+        content: [{ type: "text", text: JSON.stringify(areas, null, 2) }],
+      };
+    } catch (error) {
+      return {
+        content: [{ type: "text", text: `Error: ${error.message}` }],
+        isError: true,
+      };
+    }
+  }
+);
+
+server.registerTool(
+  "get_tags",
+  {
+    description: "List all tags in Things 3.",
+    inputSchema: {},
+  },
+  async () => {
+    try {
+      const script = `
+tell application "Things3"
+  set output to ""
+  set allTags to tags
+  repeat with t in allTags
+    set tagId to id of t
+    set tagName to name of t
+    try
+      set parentName to name of parent tag of t
+    on error
+      set parentName to "missing value"
+    end try
+    set output to output & tagId & "|||" & tagName & "|||" & parentName & "
+"
+  end repeat
+  return output
+end tell`;
+      const raw = await runAppleScript(script);
+      if (!raw) {
+        return { content: [{ type: "text", text: "No tags found." }] };
+      }
+      const tags = raw
+        .split("\n")
+        .filter((line) => line.includes("|||"))
+        .map((line) => {
+          const [id, name, parent] = line.split("|||");
+          return {
+            id: id || "",
+            name: name || "",
+            parentTag: parent === "missing value" ? null : parent || null,
+          };
+        });
+      return {
+        content: [{ type: "text", text: JSON.stringify(tags, null, 2) }],
+      };
+    } catch (error) {
+      return {
+        content: [{ type: "text", text: `Error: ${error.message}` }],
+        isError: true,
+      };
+    }
+  }
+);
+
+server.registerTool(
+  "get_todo_detail",
+  {
+    description:
+      "Get full details of a single todo in Things 3 by its ID, including name, notes, dates, tags, project, area, and status.",
+    inputSchema: {
+      id: z.string().describe("The ID of the todo to get details for"),
+    },
+  },
+  async ({ id }) => {
+    try {
+      const escapedId = id.replace(/"/g, '\\"');
+      const script = `
+tell application "Things3"
+  set t to to do id "${escapedId}"
+  set todoId to id of t
+  set todoName to name of t
+  set todoNotes to notes of t
+  set todoStatus to status of t as string
+  set todoTags to tag names of t
+  try
+    set todoDue to due date of t as string
+  on error
+    set todoDue to "missing value"
+  end try
+  try
+    set todoProject to name of project of t
+  on error
+    set todoProject to "missing value"
+  end try
+  try
+    set todoArea to name of area of t
+  on error
+    set todoArea to "missing value"
+  end try
+  try
+    set todoCreation to creation date of t as string
+  on error
+    set todoCreation to "missing value"
+  end try
+  try
+    set todoModification to modification date of t as string
+  on error
+    set todoModification to "missing value"
+  end try
+  try
+    set todoCompletion to completion date of t as string
+  on error
+    set todoCompletion to "missing value"
+  end try
+  try
+    set todoCancellation to cancellation date of t as string
+  on error
+    set todoCancellation to "missing value"
+  end try
+  try
+    set todoActivation to activation date of t as string
+  on error
+    set todoActivation to "missing value"
+  end try
+  return todoId & "|||" & todoName & "|||" & todoNotes & "|||" & todoDue & "|||" & todoProject & "|||" & todoArea & "|||" & todoStatus & "|||" & todoTags & "|||" & todoCreation & "|||" & todoModification & "|||" & todoCompletion & "|||" & todoCancellation & "|||" & todoActivation
+end tell`;
+      const raw = await runAppleScript(script);
+      const [
+        todoId, name, notes, dueDate, project, area, status,
+        tags, creationDate, modificationDate, completionDate,
+        cancellationDate, activationDate,
+      ] = raw.split("|||");
+      const mv = (v) => (v === "missing value" || !v ? null : v);
+      const detail = {
+        id: todoId || "",
+        name: name || "",
+        notes: notes || "",
+        dueDate: mv(dueDate),
+        project: mv(project),
+        area: mv(area),
+        status: status || "",
+        tags: tags && tags !== "missing value" ? tags : "",
+        creationDate: mv(creationDate),
+        modificationDate: mv(modificationDate),
+        completionDate: mv(completionDate),
+        cancellationDate: mv(cancellationDate),
+        activationDate: mv(activationDate),
+      };
+      return {
+        content: [{ type: "text", text: JSON.stringify(detail, null, 2) }],
+      };
+    } catch (error) {
+      return {
+        content: [{ type: "text", text: `Error: ${error.message}` }],
+        isError: true,
+      };
+    }
+  }
+);
+
+server.registerTool(
+  "get_project_todos",
+  {
+    description:
+      "Get all todos within a specific project in Things 3, organized by headings.",
+    inputSchema: {
+      name: z
+        .string()
+        .optional()
+        .describe("Name of the project (used if id is not provided)"),
+      id: z
+        .string()
+        .optional()
+        .describe("ID of the project (takes precedence over name)"),
+    },
+  },
+  async ({ name, id }) => {
+    try {
+      if (!name && !id) {
+        return {
+          content: [
+            { type: "text", text: "Error: Either name or id must be provided." },
+          ],
+          isError: true,
+        };
+      }
+      const projectRef = id
+        ? `project id "${id.replace(/"/g, '\\"')}"`
+        : `project "${name.replace(/"/g, '\\"')}"`;
+      const script = `
+tell application "Things3"
+  set p to ${projectRef}
+  set projName to name of p
+  set output to "PROJECT: " & projName & "
+"
+  set todoList to to dos of p
+  repeat with t in todoList
+    set todoId to id of t
+    set todoName to name of t
+    set todoNotes to notes of t
+    try
+      set todoDue to due date of t as string
+    on error
+      set todoDue to "missing value"
+    end try
+    set todoStatus to status of t as string
+    set todoTags to tag names of t
+    set output to output & todoId & "|||" & todoName & "|||" & todoNotes & "|||" & todoDue & "|||" & projName & "|||" & todoStatus & "|||" & todoTags & "
+"
+  end repeat
+  return output
+end tell`;
+      const raw = await runAppleScript(script);
+      const lines = raw.split("\n").filter(Boolean);
+      const projectLine = lines.shift() || "";
+      const projectName = projectLine.replace("PROJECT: ", "");
+      const todos = parseTodoLines(lines.join("\n"));
+      const result = { project: projectName, todos };
+      return {
+        content: [{ type: "text", text: JSON.stringify(result, null, 2) }],
+      };
+    } catch (error) {
+      return {
+        content: [{ type: "text", text: `Error: ${error.message}` }],
+        isError: true,
+      };
+    }
+  }
+);
+
+// --- Update tools (AppleScript + optional URL scheme with auth token) ---
+
+server.registerTool(
+  "update_todo",
+  {
+    description:
+      "Update an existing todo in Things 3. Title, notes, due date, and tags are changed via AppleScript (no auth needed). When, deadline, and checklist-items require THINGS_AUTH_TOKEN env var and use the URL scheme.",
+    inputSchema: {
+      id: z.string().describe("The ID of the todo to update"),
+      title: z.string().optional().describe("New title for the todo"),
+      notes: z.string().optional().describe("New notes for the todo"),
+      dueDate: z
+        .string()
+        .optional()
+        .describe("New due date (YYYY-MM-DD format, or empty string to clear)"),
+      tags: z
+        .string()
+        .optional()
+        .describe("Comma-separated tag names to set (replaces existing tags)"),
+      when: z
+        .string()
+        .optional()
+        .describe(
+          "Schedule: 'today', 'tomorrow', 'evening', 'anytime', 'someday', or YYYY-MM-DD (requires auth token)"
+        ),
+      deadline: z
+        .string()
+        .optional()
+        .describe("Deadline date in YYYY-MM-DD format (requires auth token)"),
+      checklistItems: z
+        .string()
+        .optional()
+        .describe(
+          "Newline-separated checklist items to set (requires auth token, replaces existing)"
+        ),
+      appendChecklistItems: z
+        .string()
+        .optional()
+        .describe(
+          "Newline-separated checklist items to append (requires auth token)"
+        ),
+      completed: z
+        .boolean()
+        .optional()
+        .describe("Set to true to mark completed, false to reopen"),
+    },
+  },
+  async ({
+    id,
+    title,
+    notes,
+    dueDate,
+    tags,
+    when,
+    deadline,
+    checklistItems,
+    appendChecklistItems,
+    completed,
+  }) => {
+    try {
+      const escapedId = id.replace(/"/g, '\\"');
+      const results = [];
+
+      // --- AppleScript updates (no auth needed) ---
+      const asUpdates = [];
+      if (title !== undefined) {
+        asUpdates.push(
+          `set name of t to "${title.replace(/"/g, '\\"')}"`
+        );
+      }
+      if (notes !== undefined) {
+        asUpdates.push(
+          `set notes of t to "${notes.replace(/"/g, '\\"')}"`
+        );
+      }
+      if (dueDate !== undefined) {
+        if (dueDate === "") {
+          asUpdates.push(`set due date of t to missing value`);
+        } else {
+          asUpdates.push(
+            `set due date of t to date "${dueDate.replace(/"/g, '\\"')}"`
+          );
+        }
+      }
+      if (tags !== undefined) {
+        asUpdates.push(
+          `set tag names of t to "${tags.replace(/"/g, '\\"')}"`
+        );
+      }
+      if (completed !== undefined) {
+        asUpdates.push(
+          `set status of t to ${completed ? "completed" : "open"}`
+        );
+      }
+
+      if (asUpdates.length > 0) {
+        const script = `
+tell application "Things3"
+  set t to to do id "${escapedId}"
+  ${asUpdates.join("\n  ")}
+  return name of t
+end tell`;
+        const name = await runAppleScript(script);
+        results.push(`Updated via AppleScript: ${title || name}`);
+      }
+
+      // --- URL scheme updates (auth token needed) ---
+      const urlFields = {};
+      if (when !== undefined) urlFields.when = when;
+      if (deadline !== undefined) urlFields.deadline = deadline;
+      if (checklistItems !== undefined)
+        urlFields["checklist-items"] = checklistItems;
+      if (appendChecklistItems !== undefined)
+        urlFields["append-checklist-items"] = appendChecklistItems;
+
+      if (Object.keys(urlFields).length > 0) {
+        const authToken = process.env.THINGS_AUTH_TOKEN;
+        if (!authToken) {
+          results.push(
+            `Warning: Could not update ${Object.keys(urlFields).join(", ")} — THINGS_AUTH_TOKEN is not set. ` +
+              `Get it from Things 3 → Settings → General → Enable Things URLs → Copy Auth Token, ` +
+              `then set THINGS_AUTH_TOKEN in your environment.`
+          );
+        } else {
+          urlFields["auth-token"] = authToken;
+          urlFields.id = id;
+          await openThingsURL("update", urlFields);
+          results.push(
+            `Updated via URL scheme: ${Object.keys(urlFields).filter((k) => k !== "auth-token" && k !== "id").join(", ")}`
+          );
+        }
+      }
+
+      if (results.length === 0) {
+        return {
+          content: [
+            { type: "text", text: "No updates specified. Provide at least one field to update." },
+          ],
+        };
+      }
+
+      return {
+        content: [{ type: "text", text: results.join("\n") }],
+      };
+    } catch (error) {
+      return {
+        content: [{ type: "text", text: `Error: ${error.message}` }],
+        isError: true,
+      };
+    }
+  }
+);
+
+server.registerTool(
+  "update_project",
+  {
+    description:
+      "Update an existing project in Things 3. Title, notes, and tags are changed via AppleScript (no auth needed). When, deadline, and area require THINGS_AUTH_TOKEN env var and use the URL scheme.",
+    inputSchema: {
+      id: z.string().describe("The ID of the project to update"),
+      title: z.string().optional().describe("New title for the project"),
+      notes: z.string().optional().describe("New notes for the project"),
+      tags: z
+        .string()
+        .optional()
+        .describe("Comma-separated tag names to set (replaces existing tags)"),
+      when: z
+        .string()
+        .optional()
+        .describe(
+          "Schedule: 'today', 'tomorrow', 'evening', 'anytime', 'someday', or YYYY-MM-DD (requires auth token)"
+        ),
+      deadline: z
+        .string()
+        .optional()
+        .describe("Deadline date in YYYY-MM-DD format (requires auth token)"),
+      area: z
+        .string()
+        .optional()
+        .describe("Area name to move the project to (requires auth token)"),
+    },
+  },
+  async ({ id, title, notes, tags, when, deadline, area }) => {
+    try {
+      const escapedId = id.replace(/"/g, '\\"');
+      const results = [];
+
+      // --- AppleScript updates (no auth needed) ---
+      const asUpdates = [];
+      if (title !== undefined) {
+        asUpdates.push(
+          `set name of p to "${title.replace(/"/g, '\\"')}"`
+        );
+      }
+      if (notes !== undefined) {
+        asUpdates.push(
+          `set notes of p to "${notes.replace(/"/g, '\\"')}"`
+        );
+      }
+      if (tags !== undefined) {
+        asUpdates.push(
+          `set tag names of p to "${tags.replace(/"/g, '\\"')}"`
+        );
+      }
+
+      if (asUpdates.length > 0) {
+        const script = `
+tell application "Things3"
+  set p to project id "${escapedId}"
+  ${asUpdates.join("\n  ")}
+  return name of p
+end tell`;
+        const name = await runAppleScript(script);
+        results.push(`Updated via AppleScript: ${title || name}`);
+      }
+
+      // --- URL scheme updates (auth token needed) ---
+      const urlFields = {};
+      if (when !== undefined) urlFields.when = when;
+      if (deadline !== undefined) urlFields.deadline = deadline;
+      if (area !== undefined) urlFields.area = area;
+
+      if (Object.keys(urlFields).length > 0) {
+        const authToken = process.env.THINGS_AUTH_TOKEN;
+        if (!authToken) {
+          results.push(
+            `Warning: Could not update ${Object.keys(urlFields).join(", ")} — THINGS_AUTH_TOKEN is not set. ` +
+              `Get it from Things 3 → Settings → General → Enable Things URLs → Copy Auth Token, ` +
+              `then set THINGS_AUTH_TOKEN in your environment.`
+          );
+        } else {
+          urlFields["auth-token"] = authToken;
+          urlFields.id = id;
+          await openThingsURL("update-project", urlFields);
+          results.push(
+            `Updated via URL scheme: ${Object.keys(urlFields).filter((k) => k !== "auth-token" && k !== "id").join(", ")}`
+          );
+        }
+      }
+
+      if (results.length === 0) {
+        return {
+          content: [
+            { type: "text", text: "No updates specified. Provide at least one field to update." },
+          ],
+        };
+      }
+
+      return {
+        content: [{ type: "text", text: results.join("\n") }],
+      };
+    } catch (error) {
+      return {
+        content: [{ type: "text", text: `Error: ${error.message}` }],
+        isError: true,
+      };
+    }
+  }
+);
+
 // --- Start server ---
 async function main() {
   const transport = new StdioServerTransport();
