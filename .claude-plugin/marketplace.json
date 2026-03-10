@@ -63,6 +63,31 @@
         "geocoding"
       ],
       "source": "./plugins/mcp-weather"
+    },
+    {
+      "name": "skill-gogcli",
+      "description": "Google Workspace CLI skill — Gmail, Calendar, Drive, Docs, Sheets, Slides, Contacts, Tasks, and more via gogcli",
+      "version": "1.0.0",
+      "author": {
+        "name": "Orange Hill",
+        "url": "https://github.com/orange-hill"
+      },
+      "homepage": "https://github.com/orange-hill/orange-hill-marketplace",
+      "tags": [
+        "skill",
+        "google",
+        "gmail",
+        "calendar",
+        "drive",
+        "sheets",
+        "docs",
+        "slides",
+        "contacts",
+        "tasks",
+        "gogcli",
+        "workspace"
+      ],
+      "source": "./plugins/skill-gogcli"
     }
   ]
 }
