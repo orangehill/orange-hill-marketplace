@@ -1,0 +1,10 @@
+{
+  "name": "mcp-things3",
+  "description": "Things 3 task manager integration for Claude Code via AppleScript and URL scheme",
+  "version": "2.0.0",
+  "author": {
+    "name": "Personal Assistant"
+  },
+  "keywords": ["mcp", "things3", "tasks", "productivity", "macos"],
+  "license": "MIT"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "mcp-things3",
+  "version": "1.0.0",
+  "description": "MCP server plugin for Things 3 task manager integration",
+  "type": "module",
+  "bin": {
+    "mcp-things3": "./server.js"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "bash tests/test.sh"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "zod": "^3.24.0"
+  },
+  "license": "MIT"
+}

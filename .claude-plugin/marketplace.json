@@ -27,6 +27,24 @@
         "workflow-automation"
       ],
       "source": "./plugins/orange-hill-engineering"
+    },
+    {
+      "name": "mcp-things3",
+      "description": "Things 3 task manager integration for Claude Code via AppleScript and URL scheme",
+      "version": "1.0.0",
+      "author": {
+        "name": "Orange Hill",
+        "url": "https://github.com/orange-hill"
+      },
+      "homepage": "https://github.com/orange-hill/orange-hill-marketplace",
+      "tags": [
+        "mcp",
+        "things3",
+        "tasks",
+        "productivity",
+        "macos"
+      ],
+      "source": "./plugins/mcp-things3"
     }
   ]
 }
