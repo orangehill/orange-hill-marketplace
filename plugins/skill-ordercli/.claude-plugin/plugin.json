@@ -1,0 +1,11 @@
+{
+  "name": "skill-ordercli",
+  "description": "Foodora-only CLI for checking past orders and active order status (Deliveroo WIP).\n",
+  "version": "1.0.0",
+  "author": {
+    "name": "Orange Hill (ported from OpenClaw)",
+    "url": "https://github.com/orange-hill"
+  },
+  "keywords": ["skill", "ordercli", "ordercli"],
+  "license": "MIT"
+}

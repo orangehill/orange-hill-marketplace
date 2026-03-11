@@ -1,0 +1,11 @@
+{
+  "name": "skill-gifgrep",
+  "description": "Search GIF providers with CLI/TUI, download results, and extract stills/sheets.\n",
+  "version": "1.0.0",
+  "author": {
+    "name": "Orange Hill (ported from OpenClaw)",
+    "url": "https://github.com/orange-hill"
+  },
+  "keywords": ["skill", "gifgrep", "gifgrep"],
+  "license": "MIT"
+}

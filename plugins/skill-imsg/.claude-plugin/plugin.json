@@ -1,0 +1,11 @@
+{
+  "name": "skill-imsg",
+  "description": "iMessage/SMS CLI for listing chats, history, and sending messages via Messages.app.\n",
+  "version": "1.0.0",
+  "author": {
+    "name": "Orange Hill (ported from OpenClaw)",
+    "url": "https://github.com/orange-hill"
+  },
+  "keywords": ["skill", "imsg", "imsg"],
+  "license": "MIT"
+}

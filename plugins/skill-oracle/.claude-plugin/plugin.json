@@ -1,0 +1,11 @@
+{
+  "name": "skill-oracle",
+  "description": "Best practices for using the oracle CLI (prompt + file bundling, engines, sessions, and file attachment patterns).\n",
+  "version": "1.0.0",
+  "author": {
+    "name": "Orange Hill (ported from OpenClaw)",
+    "url": "https://github.com/orange-hill"
+  },
+  "keywords": ["skill", "oracle", "oracle"],
+  "license": "MIT"
+}

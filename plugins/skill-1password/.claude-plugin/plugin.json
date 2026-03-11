@@ -1,0 +1,11 @@
+{
+  "name": "skill-1password",
+  "description": "Set up and use 1Password CLI (op). Use when installing the CLI, enabling desktop app integration, signing in (single or multi-account), or reading/injecting/running secrets via op.\n",
+  "version": "1.0.0",
+  "author": {
+    "name": "Orange Hill (ported from OpenClaw)",
+    "url": "https://github.com/orange-hill"
+  },
+  "keywords": ["skill", "1password", "op"],
+  "license": "MIT"
+}

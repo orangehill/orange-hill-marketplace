@@ -1,0 +1,11 @@
+{
+  "name": "skill-blucli",
+  "description": "BluOS CLI (blu) for discovery, playback, grouping, and volume.\n",
+  "version": "1.0.0",
+  "author": {
+    "name": "Orange Hill (ported from OpenClaw)",
+    "url": "https://github.com/orange-hill"
+  },
+  "keywords": ["skill", "blucli", "blu"],
+  "license": "MIT"
+}

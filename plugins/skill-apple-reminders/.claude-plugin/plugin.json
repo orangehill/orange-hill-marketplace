@@ -1,0 +1,11 @@
+{
+  "name": "skill-apple-reminders",
+  "description": "Manage Apple Reminders via remindctl CLI (list, add, edit, complete, delete). Supports lists, date filters, and JSON/plain output.\n",
+  "version": "1.0.0",
+  "author": {
+    "name": "Orange Hill (ported from OpenClaw)",
+    "url": "https://github.com/orange-hill"
+  },
+  "keywords": ["skill", "apple-reminders", "remindctl"],
+  "license": "MIT"
+}

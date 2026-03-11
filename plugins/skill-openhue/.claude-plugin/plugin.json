@@ -1,0 +1,11 @@
+{
+  "name": "skill-openhue",
+  "description": "Control Philips Hue lights and scenes via the OpenHue CLI.\n",
+  "version": "1.0.0",
+  "author": {
+    "name": "Orange Hill (ported from OpenClaw)",
+    "url": "https://github.com/orange-hill"
+  },
+  "keywords": ["skill", "openhue", "openhue"],
+  "license": "MIT"
+}
