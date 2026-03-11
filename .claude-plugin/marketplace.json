@@ -65,8 +65,219 @@
       "source": "./plugins/mcp-weather"
     },
     {
+      "name": "skill-1password",
+      "description": "Set up and use 1Password CLI (op). Use when installing the CLI, enabling desktop app integration, signing in (single or multi-account), or reading/injecting/running secrets via op.\n",
+      "version": "1.0.0",
+      "author": {
+        "name": "Orange Hill",
+        "url": "https://github.com/orange-hill"
+      },
+      "homepage": "https://github.com/orange-hill/orange-hill-marketplace",
+      "tags": [
+        "skill",
+        "1password",
+        "op",
+        "security",
+        "passwords",
+        "macos"
+      ],
+      "source": "./plugins/skill-1password"
+    },
+    {
+      "name": "skill-apple-notes",
+      "description": "Manage Apple Notes via the `memo` CLI on macOS (create, view, edit, delete, search, move, and export notes). Use when a user asks Claude Code to add a note, list notes, search notes, or manage note folders.\n",
+      "version": "1.0.0",
+      "author": {
+        "name": "Orange Hill",
+        "url": "https://github.com/orange-hill"
+      },
+      "homepage": "https://github.com/orange-hill/orange-hill-marketplace",
+      "tags": [
+        "skill",
+        "apple-notes",
+        "memo",
+        "notes",
+        "productivity",
+        "macos"
+      ],
+      "source": "./plugins/skill-apple-notes"
+    },
+    {
+      "name": "skill-apple-reminders",
+      "description": "Manage Apple Reminders via remindctl CLI (list, add, edit, complete, delete). Supports lists, date filters, and JSON/plain output.\n",
+      "version": "1.0.0",
+      "author": {
+        "name": "Orange Hill",
+        "url": "https://github.com/orange-hill"
+      },
+      "homepage": "https://github.com/orange-hill/orange-hill-marketplace",
+      "tags": [
+        "skill",
+        "apple-reminders",
+        "remindctl",
+        "reminders",
+        "productivity",
+        "macos"
+      ],
+      "source": "./plugins/skill-apple-reminders"
+    },
+    {
+      "name": "skill-bear-notes",
+      "description": "Create, search, and manage Bear notes via grizzly CLI.\n",
+      "version": "1.0.0",
+      "author": {
+        "name": "Orange Hill",
+        "url": "https://github.com/orange-hill"
+      },
+      "homepage": "https://github.com/orange-hill/orange-hill-marketplace",
+      "tags": [
+        "skill",
+        "bear-notes",
+        "grizzly",
+        "notes",
+        "productivity",
+        "macos"
+      ],
+      "source": "./plugins/skill-bear-notes"
+    },
+    {
+      "name": "skill-blucli",
+      "description": "BluOS CLI (blu) for discovery, playback, grouping, and volume.\n",
+      "version": "1.0.0",
+      "author": {
+        "name": "Orange Hill",
+        "url": "https://github.com/orange-hill"
+      },
+      "homepage": "https://github.com/orange-hill/orange-hill-marketplace",
+      "tags": [
+        "skill",
+        "blucli",
+        "blu",
+        "audio",
+        "smart-home",
+        "bluos"
+      ],
+      "source": "./plugins/skill-blucli"
+    },
+    {
+      "name": "skill-camsnap",
+      "description": "Capture frames or clips from RTSP/ONVIF cameras.\n",
+      "version": "1.0.0",
+      "author": {
+        "name": "Orange Hill",
+        "url": "https://github.com/orange-hill"
+      },
+      "homepage": "https://github.com/orange-hill/orange-hill-marketplace",
+      "tags": [
+        "skill",
+        "camsnap",
+        "camsnap",
+        "camera",
+        "rtsp",
+        "security"
+      ],
+      "source": "./plugins/skill-camsnap"
+    },
+    {
+      "name": "skill-eightctl",
+      "description": "Control Eight Sleep pods (status, temperature, alarms, schedules).\n",
+      "version": "1.0.0",
+      "author": {
+        "name": "Orange Hill",
+        "url": "https://github.com/orange-hill"
+      },
+      "homepage": "https://github.com/orange-hill/orange-hill-marketplace",
+      "tags": [
+        "skill",
+        "eightctl",
+        "eightctl",
+        "smart-home",
+        "sleep",
+        "iot"
+      ],
+      "source": "./plugins/skill-eightctl"
+    },
+    {
+      "name": "skill-gemini",
+      "description": "Gemini CLI for one-shot Q&A, summaries, and generation.\n",
+      "version": "1.0.0",
+      "author": {
+        "name": "Orange Hill",
+        "url": "https://github.com/orange-hill"
+      },
+      "homepage": "https://github.com/orange-hill/orange-hill-marketplace",
+      "tags": [
+        "skill",
+        "gemini",
+        "gemini",
+        "ai",
+        "llm",
+        "google"
+      ],
+      "source": "./plugins/skill-gemini"
+    },
+    {
+      "name": "skill-gh-issues",
+      "description": "Fetch GitHub issues, spawn sub-agents to implement fixes and open PRs, then monitor and address PR review comments. Usage: /gh-issues [owner/repo] [--label bug] [--limit 5] [--milestone v1.0] [--assignee @me] [--fork user/repo] [--watch] [--interval 5] [--reviews-only] [--cron] [--dry-run] [--model glm-5] [--notify-channel -1002381931352]\n",
+      "version": "1.0.0",
+      "author": {
+        "name": "Orange Hill",
+        "url": "https://github.com/orange-hill"
+      },
+      "homepage": "https://github.com/orange-hill/orange-hill-marketplace",
+      "tags": [
+        "skill",
+        "gh-issues",
+        "curl",
+        "git",
+        "gh",
+        "github",
+        "automation",
+        "issues",
+        "pull-requests"
+      ],
+      "source": "./plugins/skill-gh-issues"
+    },
+    {
+      "name": "skill-gifgrep",
+      "description": "Search GIF providers with CLI/TUI, download results, and extract stills/sheets.\n",
+      "version": "1.0.0",
+      "author": {
+        "name": "Orange Hill",
+        "url": "https://github.com/orange-hill"
+      },
+      "homepage": "https://github.com/orange-hill/orange-hill-marketplace",
+      "tags": [
+        "skill",
+        "gifgrep",
+        "gifgrep",
+        "media",
+        "gif",
+        "search"
+      ],
+      "source": "./plugins/skill-gifgrep"
+    },
+    {
+      "name": "skill-github",
+      "description": "GitHub operations via `gh` CLI: issues, PRs, CI runs, code review, API queries. Use when: (1) checking PR status or CI, (2) creating/commenting on issues, (3) listing/filtering PRs or issues, (4) viewing run logs. NOT for: complex web UI interactions requiring manual browser flows (use browser tooling when available), bulk operations across many repos (script with gh api), or when gh auth is not configured.\n",
+      "version": "1.0.0",
+      "author": {
+        "name": "Orange Hill",
+        "url": "https://github.com/orange-hill"
+      },
+      "homepage": "https://github.com/orange-hill/orange-hill-marketplace",
+      "tags": [
+        "skill",
+        "github",
+        "gh",
+        "development",
+        "ci-cd"
+      ],
+      "source": "./plugins/skill-github"
+    },
+    {
       "name": "skill-gogcli",
-      "description": "Google Workspace CLI skill — Gmail, Calendar, Drive, Docs, Sheets, Slides, Contacts, Tasks, and more via gogcli",
+      "description": "Google Workspace CLI skill \u2014 Gmail, Calendar, Drive, Docs, Sheets, Slides, Contacts, Tasks, and more via gogcli",
       "version": "1.0.0",
       "author": {
         "name": "Orange Hill",
@@ -88,6 +299,420 @@
         "workspace"
       ],
       "source": "./plugins/skill-gogcli"
+    },
+    {
+      "name": "skill-goplaces",
+      "description": "Query Google Places API (New) via the goplaces CLI for text search, place details, resolve, and reviews. Use for human-friendly place lookup or JSON output for scripts.\n",
+      "version": "1.0.0",
+      "author": {
+        "name": "Orange Hill",
+        "url": "https://github.com/orange-hill"
+      },
+      "homepage": "https://github.com/orange-hill/orange-hill-marketplace",
+      "tags": [
+        "skill",
+        "goplaces",
+        "goplaces",
+        "google",
+        "places",
+        "location"
+      ],
+      "source": "./plugins/skill-goplaces"
+    },
+    {
+      "name": "skill-himalaya",
+      "description": "CLI to manage emails via IMAP/SMTP. Use `himalaya` to list, read, write, reply, forward, search, and organize emails from the terminal. Supports multiple accounts and message composition with MML (MIME Meta Language).\n",
+      "version": "1.0.0",
+      "author": {
+        "name": "Orange Hill",
+        "url": "https://github.com/orange-hill"
+      },
+      "homepage": "https://github.com/orange-hill/orange-hill-marketplace",
+      "tags": [
+        "skill",
+        "himalaya",
+        "himalaya",
+        "email",
+        "imap",
+        "smtp"
+      ],
+      "source": "./plugins/skill-himalaya"
+    },
+    {
+      "name": "skill-imsg",
+      "description": "iMessage/SMS CLI for listing chats, history, and sending messages via Messages.app.\n",
+      "version": "1.0.0",
+      "author": {
+        "name": "Orange Hill",
+        "url": "https://github.com/orange-hill"
+      },
+      "homepage": "https://github.com/orange-hill/orange-hill-marketplace",
+      "tags": [
+        "skill",
+        "imsg",
+        "imsg",
+        "messaging",
+        "imessage",
+        "macos"
+      ],
+      "source": "./plugins/skill-imsg"
+    },
+    {
+      "name": "skill-model-usage",
+      "description": "Use CodexBar CLI local cost usage to summarize per-model usage for Codex or Claude, including the current (most recent) model or a full model breakdown. Trigger when asked for model-level usage/cost data from codexbar, or when you need a scriptable per-model summary from codexbar cost JSON.\n",
+      "version": "1.0.0",
+      "author": {
+        "name": "Orange Hill",
+        "url": "https://github.com/orange-hill"
+      },
+      "homepage": "https://github.com/orange-hill/orange-hill-marketplace",
+      "tags": [
+        "skill",
+        "model-usage",
+        "codexbar",
+        "ai",
+        "cost",
+        "analytics"
+      ],
+      "source": "./plugins/skill-model-usage"
+    },
+    {
+      "name": "skill-nano-banana-pro",
+      "description": "Generate or edit images via Gemini 3 Pro Image (Nano Banana Pro).\n",
+      "version": "1.0.0",
+      "author": {
+        "name": "Orange Hill",
+        "url": "https://github.com/orange-hill"
+      },
+      "homepage": "https://github.com/orange-hill/orange-hill-marketplace",
+      "tags": [
+        "skill",
+        "nano-banana-pro",
+        "uv",
+        "ai",
+        "image-generation",
+        "gemini"
+      ],
+      "source": "./plugins/skill-nano-banana-pro"
+    },
+    {
+      "name": "skill-nano-pdf",
+      "description": "Edit PDFs with natural-language instructions using the nano-pdf CLI.\n",
+      "version": "1.0.0",
+      "author": {
+        "name": "Orange Hill",
+        "url": "https://github.com/orange-hill"
+      },
+      "homepage": "https://github.com/orange-hill/orange-hill-marketplace",
+      "tags": [
+        "skill",
+        "nano-pdf",
+        "nano-pdf",
+        "pdf",
+        "document",
+        "editing"
+      ],
+      "source": "./plugins/skill-nano-pdf"
+    },
+    {
+      "name": "skill-notion",
+      "description": "Notion API for creating and managing pages, databases, and blocks.\n",
+      "version": "1.0.0",
+      "author": {
+        "name": "Orange Hill",
+        "url": "https://github.com/orange-hill"
+      },
+      "homepage": "https://github.com/orange-hill/orange-hill-marketplace",
+      "tags": [
+        "skill",
+        "notion",
+        "productivity",
+        "notes",
+        "database"
+      ],
+      "source": "./plugins/skill-notion"
+    },
+    {
+      "name": "skill-obsidian",
+      "description": "Work with Obsidian vaults (plain Markdown notes) and automate via obsidian-cli.\n",
+      "version": "1.0.0",
+      "author": {
+        "name": "Orange Hill",
+        "url": "https://github.com/orange-hill"
+      },
+      "homepage": "https://github.com/orange-hill/orange-hill-marketplace",
+      "tags": [
+        "skill",
+        "obsidian",
+        "obsidian-cli",
+        "notes",
+        "markdown",
+        "productivity"
+      ],
+      "source": "./plugins/skill-obsidian"
+    },
+    {
+      "name": "skill-openai-image-gen",
+      "description": "Batch-generate images via OpenAI Images API. Random prompt sampler + `index.html` gallery.\n",
+      "version": "1.0.0",
+      "author": {
+        "name": "Orange Hill",
+        "url": "https://github.com/orange-hill"
+      },
+      "homepage": "https://github.com/orange-hill/orange-hill-marketplace",
+      "tags": [
+        "skill",
+        "openai-image-gen",
+        "python3",
+        "ai",
+        "image-generation",
+        "openai"
+      ],
+      "source": "./plugins/skill-openai-image-gen"
+    },
+    {
+      "name": "skill-openai-whisper-api",
+      "description": "Transcribe audio via OpenAI Audio Transcriptions API (Whisper).\n",
+      "version": "1.0.0",
+      "author": {
+        "name": "Orange Hill",
+        "url": "https://github.com/orange-hill"
+      },
+      "homepage": "https://github.com/orange-hill/orange-hill-marketplace",
+      "tags": [
+        "skill",
+        "openai-whisper-api",
+        "curl",
+        "ai",
+        "transcription",
+        "audio",
+        "openai"
+      ],
+      "source": "./plugins/skill-openai-whisper-api"
+    },
+    {
+      "name": "skill-openhue",
+      "description": "Control Philips Hue lights and scenes via the OpenHue CLI.\n",
+      "version": "1.0.0",
+      "author": {
+        "name": "Orange Hill",
+        "url": "https://github.com/orange-hill"
+      },
+      "homepage": "https://github.com/orange-hill/orange-hill-marketplace",
+      "tags": [
+        "skill",
+        "openhue",
+        "openhue",
+        "smart-home",
+        "lighting",
+        "iot"
+      ],
+      "source": "./plugins/skill-openhue"
+    },
+    {
+      "name": "skill-oracle",
+      "description": "Best practices for using the oracle CLI (prompt + file bundling, engines, sessions, and file attachment patterns).\n",
+      "version": "1.0.0",
+      "author": {
+        "name": "Orange Hill",
+        "url": "https://github.com/orange-hill"
+      },
+      "homepage": "https://github.com/orange-hill/orange-hill-marketplace",
+      "tags": [
+        "skill",
+        "oracle",
+        "oracle",
+        "ai",
+        "llm",
+        "cli"
+      ],
+      "source": "./plugins/skill-oracle"
+    },
+    {
+      "name": "skill-ordercli",
+      "description": "Foodora-only CLI for checking past orders and active order status (Deliveroo WIP).\n",
+      "version": "1.0.0",
+      "author": {
+        "name": "Orange Hill",
+        "url": "https://github.com/orange-hill"
+      },
+      "homepage": "https://github.com/orange-hill/orange-hill-marketplace",
+      "tags": [
+        "skill",
+        "ordercli",
+        "ordercli",
+        "food-delivery",
+        "foodora"
+      ],
+      "source": "./plugins/skill-ordercli"
+    },
+    {
+      "name": "skill-peekaboo",
+      "description": "Capture and automate macOS UI with the Peekaboo CLI.\n",
+      "version": "1.0.0",
+      "author": {
+        "name": "Orange Hill",
+        "url": "https://github.com/orange-hill"
+      },
+      "homepage": "https://github.com/orange-hill/orange-hill-marketplace",
+      "tags": [
+        "skill",
+        "peekaboo",
+        "peekaboo",
+        "macos",
+        "ui-automation",
+        "screenshot"
+      ],
+      "source": "./plugins/skill-peekaboo"
+    },
+    {
+      "name": "skill-songsee",
+      "description": "Generate spectrograms and feature-panel visualizations from audio with the songsee CLI.\n",
+      "version": "1.0.0",
+      "author": {
+        "name": "Orange Hill",
+        "url": "https://github.com/orange-hill"
+      },
+      "homepage": "https://github.com/orange-hill/orange-hill-marketplace",
+      "tags": [
+        "skill",
+        "songsee",
+        "songsee",
+        "audio",
+        "visualization",
+        "spectrogram"
+      ],
+      "source": "./plugins/skill-songsee"
+    },
+    {
+      "name": "skill-sonoscli",
+      "description": "Control Sonos speakers (discover/status/play/volume/group).\n",
+      "version": "1.0.0",
+      "author": {
+        "name": "Orange Hill",
+        "url": "https://github.com/orange-hill"
+      },
+      "homepage": "https://github.com/orange-hill/orange-hill-marketplace",
+      "tags": [
+        "skill",
+        "sonoscli",
+        "sonos",
+        "audio",
+        "smart-home"
+      ],
+      "source": "./plugins/skill-sonoscli"
+    },
+    {
+      "name": "skill-spotify-player",
+      "description": "Terminal Spotify playback/search via spogo (preferred) or spotify_player.\n",
+      "version": "1.0.0",
+      "author": {
+        "name": "Orange Hill",
+        "url": "https://github.com/orange-hill"
+      },
+      "homepage": "https://github.com/orange-hill/orange-hill-marketplace",
+      "tags": [
+        "skill",
+        "spotify-player",
+        "spogo",
+        "spotify_player",
+        "music",
+        "spotify",
+        "playback"
+      ],
+      "source": "./plugins/skill-spotify-player"
+    },
+    {
+      "name": "skill-tmux",
+      "description": "Remote-control tmux sessions for interactive CLIs by sending keystrokes and scraping pane output.\n",
+      "version": "1.0.0",
+      "author": {
+        "name": "Orange Hill",
+        "url": "https://github.com/orange-hill"
+      },
+      "homepage": "https://github.com/orange-hill/orange-hill-marketplace",
+      "tags": [
+        "skill",
+        "tmux",
+        "tmux",
+        "terminal",
+        "automation",
+        "development"
+      ],
+      "source": "./plugins/skill-tmux"
+    },
+    {
+      "name": "skill-trello",
+      "description": "Manage Trello boards, lists, and cards via the Trello REST API.\n",
+      "version": "1.0.0",
+      "author": {
+        "name": "Orange Hill",
+        "url": "https://github.com/orange-hill"
+      },
+      "homepage": "https://github.com/orange-hill/orange-hill-marketplace",
+      "tags": [
+        "skill",
+        "trello",
+        "jq",
+        "productivity",
+        "project-management",
+        "kanban"
+      ],
+      "source": "./plugins/skill-trello"
+    },
+    {
+      "name": "skill-video-frames",
+      "description": "Extract frames or short clips from videos using ffmpeg.\n",
+      "version": "1.0.0",
+      "author": {
+        "name": "Orange Hill",
+        "url": "https://github.com/orange-hill"
+      },
+      "homepage": "https://github.com/orange-hill/orange-hill-marketplace",
+      "tags": [
+        "skill",
+        "video-frames",
+        "ffmpeg",
+        "video",
+        "media"
+      ],
+      "source": "./plugins/skill-video-frames"
+    },
+    {
+      "name": "skill-weather",
+      "description": "Get current weather and forecasts via wttr.in or Open-Meteo. Use when: user asks about weather, temperature, or forecasts for any location. NOT for: historical weather data, severe weather alerts, or detailed meteorological analysis. No API key needed.\n",
+      "version": "1.0.0",
+      "author": {
+        "name": "Orange Hill",
+        "url": "https://github.com/orange-hill"
+      },
+      "homepage": "https://github.com/orange-hill/orange-hill-marketplace",
+      "tags": [
+        "skill",
+        "weather",
+        "curl",
+        "forecast"
+      ],
+      "source": "./plugins/skill-weather"
+    },
+    {
+      "name": "skill-xurl",
+      "description": "A CLI tool for making authenticated requests to the X (Twitter) API. Use this skill when you need to post tweets, reply, quote, search, read posts, manage followers, send DMs, upload media, or interact with any X API v2 endpoint.\n",
+      "version": "1.0.0",
+      "author": {
+        "name": "Orange Hill",
+        "url": "https://github.com/orange-hill"
+      },
+      "homepage": "https://github.com/orange-hill/orange-hill-marketplace",
+      "tags": [
+        "skill",
+        "xurl",
+        "xurl",
+        "social-media",
+        "twitter",
+        "x-api"
+      ],
+      "source": "./plugins/skill-xurl"
     }
   ]
 }
