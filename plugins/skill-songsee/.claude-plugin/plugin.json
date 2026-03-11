@@ -1,0 +1,11 @@
+{
+  "name": "skill-songsee",
+  "description": "Generate spectrograms and feature-panel visualizations from audio with the songsee CLI.\n",
+  "version": "1.0.0",
+  "author": {
+    "name": "Orange Hill (ported from OpenClaw)",
+    "url": "https://github.com/orange-hill"
+  },
+  "keywords": ["skill", "songsee", "songsee"],
+  "license": "MIT"
+}

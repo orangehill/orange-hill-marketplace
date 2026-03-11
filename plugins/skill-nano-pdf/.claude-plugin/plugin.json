@@ -1,0 +1,11 @@
+{
+  "name": "skill-nano-pdf",
+  "description": "Edit PDFs with natural-language instructions using the nano-pdf CLI.\n",
+  "version": "1.0.0",
+  "author": {
+    "name": "Orange Hill (ported from OpenClaw)",
+    "url": "https://github.com/orange-hill"
+  },
+  "keywords": ["skill", "nano-pdf", "nano-pdf"],
+  "license": "MIT"
+}

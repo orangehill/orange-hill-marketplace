@@ -1,0 +1,11 @@
+{
+  "name": "skill-eightctl",
+  "description": "Control Eight Sleep pods (status, temperature, alarms, schedules).\n",
+  "version": "1.0.0",
+  "author": {
+    "name": "Orange Hill (ported from OpenClaw)",
+    "url": "https://github.com/orange-hill"
+  },
+  "keywords": ["skill", "eightctl", "eightctl"],
+  "license": "MIT"
+}

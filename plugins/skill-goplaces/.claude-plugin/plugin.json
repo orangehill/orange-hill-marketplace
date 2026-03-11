@@ -1,0 +1,11 @@
+{
+  "name": "skill-goplaces",
+  "description": "Query Google Places API (New) via the goplaces CLI for text search, place details, resolve, and reviews. Use for human-friendly place lookup or JSON output for scripts.\n",
+  "version": "1.0.0",
+  "author": {
+    "name": "Orange Hill (ported from OpenClaw)",
+    "url": "https://github.com/orange-hill"
+  },
+  "keywords": ["skill", "goplaces", "goplaces"],
+  "license": "MIT"
+}

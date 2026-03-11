@@ -1,0 +1,11 @@
+{
+  "name": "skill-video-frames",
+  "description": "Extract frames or short clips from videos using ffmpeg.\n",
+  "version": "1.0.0",
+  "author": {
+    "name": "Orange Hill (ported from OpenClaw)",
+    "url": "https://github.com/orange-hill"
+  },
+  "keywords": ["skill", "video-frames", "ffmpeg"],
+  "license": "MIT"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "skill-tmux",
+  "description": "Remote-control tmux sessions for interactive CLIs by sending keystrokes and scraping pane output.\n",
+  "version": "1.0.0",
+  "author": {
+    "name": "Orange Hill (ported from OpenClaw)",
+    "url": "https://github.com/orange-hill"
+  },
+  "keywords": ["skill", "tmux", "tmux"],
+  "license": "MIT"
+}

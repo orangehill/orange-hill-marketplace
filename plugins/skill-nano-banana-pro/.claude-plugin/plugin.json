@@ -1,0 +1,11 @@
+{
+  "name": "skill-nano-banana-pro",
+  "description": "Generate or edit images via Gemini 3 Pro Image (Nano Banana Pro).\n",
+  "version": "1.0.0",
+  "author": {
+    "name": "Orange Hill (ported from OpenClaw)",
+    "url": "https://github.com/orange-hill"
+  },
+  "keywords": ["skill", "nano-banana-pro", "uv"],
+  "license": "MIT"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "skill-sonoscli",
+  "description": "Control Sonos speakers (discover/status/play/volume/group).\n",
+  "version": "1.0.0",
+  "author": {
+    "name": "Orange Hill (ported from OpenClaw)",
+    "url": "https://github.com/orange-hill"
+  },
+  "keywords": ["skill", "sonoscli", "sonos"],
+  "license": "MIT"
+}

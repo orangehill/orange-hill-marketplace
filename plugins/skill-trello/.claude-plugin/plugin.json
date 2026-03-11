@@ -1,0 +1,11 @@
+{
+  "name": "skill-trello",
+  "description": "Manage Trello boards, lists, and cards via the Trello REST API.\n",
+  "version": "1.0.0",
+  "author": {
+    "name": "Orange Hill (ported from OpenClaw)",
+    "url": "https://github.com/orange-hill"
+  },
+  "keywords": ["skill", "trello", "jq"],
+  "license": "MIT"
+}
