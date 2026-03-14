@@ -1,6 +1,6 @@
 # Orange Hill Marketplace
 
-A Claude Code plugin marketplace with **37 plugins** — MCP servers, CLI skill integrations, and development tools.
+A Claude Code plugin marketplace with **38 plugins** — MCP servers, CLI skill integrations, and development tools.
 
 ## Credits
 
@@ -26,6 +26,7 @@ claude /plugin install orange-hill-engineering
 |--------|-------------|
 | **mcp-things3** | Things 3 task manager integration via AppleScript and URL scheme |
 | **mcp-weather** | Weather forecasts and geocoding via Open-Meteo API (free, no key) |
+| **mcp-whatsapp** | WhatsApp messaging via Baileys — send/receive as your own number |
 
 ### Development & Engineering
 
