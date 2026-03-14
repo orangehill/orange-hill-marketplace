@@ -1,0 +1,23 @@
+{
+  "name": "mcp-whatsapp",
+  "version": "2.0.0",
+  "description": "MCP server plugin for WhatsApp via Baileys — send and receive messages as your own number",
+  "type": "module",
+  "bin": {
+    "mcp-whatsapp": "./server.js"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "setup": "node setup.js",
+    "test": "bash tests/test.sh"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "@whiskeysockets/baileys": "^7.0.0-rc.9",
+    "better-sqlite3": "^11.8.1",
+    "pino": "^9.6.0",
+    "qrcode": "^1.5.4",
+    "zod": "^3.24.0"
+  },
+  "license": "MIT"
+}

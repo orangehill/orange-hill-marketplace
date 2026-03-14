@@ -277,7 +277,7 @@
     },
     {
       "name": "skill-gogcli",
-      "description": "Google Workspace CLI skill \u2014 Gmail, Calendar, Drive, Docs, Sheets, Slides, Contacts, Tasks, and more via gogcli",
+      "description": "Google Workspace CLI skill — Gmail, Calendar, Drive, Docs, Sheets, Slides, Contacts, Tasks, and more via gogcli",
       "version": "1.0.0",
       "author": {
         "name": "Orange Hill",
@@ -713,6 +713,23 @@
         "x-api"
       ],
       "source": "./plugins/skill-xurl"
+    },
+    {
+      "name": "mcp-whatsapp",
+      "description": "WhatsApp integration via Baileys — send/receive messages as your own number via MCP",
+      "version": "2.0.0",
+      "author": {
+        "name": "Orange Hill",
+        "url": "https://github.com/orange-hill"
+      },
+      "homepage": "https://github.com/orange-hill/orange-hill-marketplace",
+      "tags": [
+        "mcp",
+        "whatsapp",
+        "messaging",
+        "baileys"
+      ],
+      "source": "./plugins/mcp-whatsapp"
     }
   ]
 }
