@@ -1,0 +1,10 @@
+{
+  "name": "mcp-whatsapp",
+  "description": "WhatsApp integration via Baileys — send/receive messages as your own number via MCP",
+  "version": "2.0.0",
+  "author": {
+    "name": "OrangeHill"
+  },
+  "keywords": ["mcp", "whatsapp", "messaging", "baileys"],
+  "license": "MIT"
+}
